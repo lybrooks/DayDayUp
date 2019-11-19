@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/colorTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@drawable/ic_photo"
+            android:id="@+id/iv_photo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"/>
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:paddingLeft="10dp"
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            tl:tl_indicator_color="#FFFFFF"
+            tl:tl_indicator_height="1.5dp"
+            tl:tl_indicator_width_equal_title="true"
+            tl:tl_tab_padding="6dp"
+            tl:tl_textSelectColor="#FFFFFF"
+            tl:tl_textUnselectColor="#66FFFFFF"
+            tl:tl_underline_color="#1AFFFFFF"
+            tl:tl_underline_height="1dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
