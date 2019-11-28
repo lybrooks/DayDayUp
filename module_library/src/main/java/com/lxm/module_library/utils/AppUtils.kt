@@ -29,7 +29,7 @@ object AppUtils {
      *
      * @return 上下文对象
      */
-  val context: Context
+    val context: Context
         get() = GlobalApplication.getContext()
 
     /**
@@ -58,7 +58,7 @@ object AppUtils {
         get() {
             var sdDir: File? = null
             val sdCardExist = Environment.getExternalStorageState() == Environment
-                    .MEDIA_MOUNTED
+                .MEDIA_MOUNTED
             if (sdCardExist) {
                 sdDir = Environment.getExternalStorageDirectory()
             }
@@ -119,9 +119,15 @@ object AppUtils {
 
     @SuppressLint("MissingPermission")
     private fun getIMEI(context: Context): String? {
-        val tm = context.getSystemService(Context
-                .TELEPHONY_SERVICE) as TelephonyManager
-        return if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+        val tm = context.getSystemService(
+            Context
+                .TELEPHONY_SERVICE
+        ) as TelephonyManager
+        return if (ActivityCompat.checkSelfPermission(
+                context,
+                Manifest.permission.READ_PHONE_STATE
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
             tm.deviceId
         } else null
     }
@@ -131,7 +137,7 @@ object AppUtils {
      */
     private fun openSoftInput(et: EditText) {
         val inputMethodManager = et.context
-                .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.showSoftInput(et, InputMethodManager.HIDE_NOT_ALWAYS)
     }
 
@@ -140,9 +146,11 @@ object AppUtils {
      */
     private fun hideSoftInput(et: EditText) {
         val inputMethodManager = et.context
-                .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(et.windowToken, InputMethodManager
-                .HIDE_NOT_ALWAYS)
+            .getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(
+            et.windowToken, InputMethodManager
+                .HIDE_NOT_ALWAYS
+        )
     }
 
     /**
@@ -152,15 +160,17 @@ object AppUtils {
      */
     private fun promptInstall(context: Context, data: Uri) {
         val promptInstall = Intent(Intent.ACTION_VIEW)
-                .setDataAndType(data, "application/vnd.android.package-archive")
+            .setDataAndType(data, "application/vnd.android.package-archive")
         // FLAG_ACTIVITY_NEW_TASK 可以保证安装成功时可以正常打开 app
         promptInstall.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(promptInstall)
     }
 
     fun copy2clipboard(context: Context, text: String) {
-        val cm = context.getSystemService(Context
-                .CLIPBOARD_SERVICE) as ClipboardManager
+        val cm = context.getSystemService(
+            Context
+                .CLIPBOARD_SERVICE
+        ) as ClipboardManager
         val clip = ClipData.newPlainText("clip", text)
         cm.primaryClip = clip
     }

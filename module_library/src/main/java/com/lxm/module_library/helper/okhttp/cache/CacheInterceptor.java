@@ -4,6 +4,7 @@ package com.lxm.module_library.helper.okhttp.cache;
 import com.lxm.module_library.utils.AppUtils;
 import com.lxm.module_library.utils.HttpUtils;
 import com.lxm.module_library.utils.NetworkConnectionUtils;
+
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -24,7 +25,7 @@ public class CacheInterceptor implements Interceptor {
         Request request = chain.request();
         if (NetworkConnectionUtils.INSTANCE.isNetworkConnected(AppUtils.INSTANCE.getContext())) {
             // 有网络时, 缓存60s
-            int maxAge = 10 ;
+            int maxAge = 10;
             request = request.newBuilder()
                     .removeHeader("User-Agent")
                     .header("User-Agent", HttpUtils.INSTANCE.getUserAgent())

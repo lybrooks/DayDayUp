@@ -3,6 +3,7 @@ package com.lxm.module_library.helper.okhttp;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.X509TrustManager;
+
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
@@ -10,7 +11,7 @@ import java.security.cert.X509Certificate;
  * Created by Horrarndoo on 2017/9/12.
  * <p>
  */
-public class TrustManager {
+public class  TrustManager {
 
     public static SSLSocketFactory getUnsafeOkHttpClient() {
         try {

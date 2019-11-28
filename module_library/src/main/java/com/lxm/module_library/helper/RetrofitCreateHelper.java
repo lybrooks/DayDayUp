@@ -1,10 +1,13 @@
 package com.lxm.module_library.helper;
 
+import android.util.Log;
+
 import com.lxm.module_library.utils.AppUtils;
 import com.lxm.module_library.helper.okhttp.TrustManager;
 import com.lxm.module_library.helper.okhttp.cache.CacheInterceptor;
 import com.lxm.module_library.helper.okhttp.cache.HttpCache;
 import com.lxm.module_library.helper.okhttp.cookies.CookieManger;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;

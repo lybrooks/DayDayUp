@@ -5,10 +5,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.daydayup.ui.ArticleFragment">
 
-    <TextView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/test"
-        android:text="Hello" />
+        android:layout_height="match_parent">
+
+        <com.lxm.module_library.xrecycleview.XRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EEEEEE"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarFadeDuration="1"
+            android:scrollbarSize="4dp"
+            android:scrollbars="vertical" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

@@ -220,4 +220,6 @@ abstract class BaseFragment<VM : ViewModel> : Fragment() {
         }
     }
 
+    abstract fun initView()
+
 }

@@ -43,11 +43,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFragment() {
         mFragment.run {
-            add(ArticleFragment.newInstance())
-            add(ArticleFragment.newInstance())
-            add(ArticleFragment.newInstance())
-            add(ArticleFragment.newInstance())
-            add(ArticleFragment.newInstance())
+            add(ArticleFragment.getInstance())
+            add(ArticleFragment.getInstance())
+            add(ArticleFragment.getInstance())
+            add(ArticleFragment.getInstance())
+            add(ArticleFragment.getInstance())
         }
 
         mAdapter.setFragments(mFragment)

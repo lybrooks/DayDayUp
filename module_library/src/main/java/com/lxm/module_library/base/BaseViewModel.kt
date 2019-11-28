@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-open class BaseViewModel<T> : ViewModel() {
+open class BaseViewModel : ViewModel() {
 
     private var mCompositeDisposable: CompositeDisposable? = null
 

@@ -12,7 +12,7 @@ import com.lxm.module_library.utils.PreferencesUtil;
  * 全局Application
  */
 
-public class GlobalApplication extends Application {
+public class   GlobalApplication extends Application {
     protected static Context context;
     protected static Handler handler;
     protected static int mainThreadId;

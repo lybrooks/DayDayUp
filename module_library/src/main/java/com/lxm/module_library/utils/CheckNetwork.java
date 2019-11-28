@@ -3,6 +3,7 @@ package com.lxm.module_library.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 /**
  * 用于判断是不是联网状态
@@ -21,6 +22,7 @@ public class CheckNetwork {
                 ConnectivityManager cm = (ConnectivityManager) context
                         .getSystemService(context.CONNECTIVITY_SERVICE);
                 NetworkInfo info = cm.getActiveNetworkInfo();
+                Log.e("main",info.isConnected()+"");
                 return info != null && info.isConnected();
             }else{
                 /**如果context为空，就返回false，表示网络未连接*/

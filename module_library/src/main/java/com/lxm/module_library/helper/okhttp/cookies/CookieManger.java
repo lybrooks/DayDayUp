@@ -1,6 +1,7 @@
 package com.lxm.module_library.helper.okhttp.cookies;
 
 import android.content.Context;
+
 import okhttp3.Cookie;
 import okhttp3.CookieJar;
 import okhttp3.HttpUrl;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 
 
-public class CookieManger implements CookieJar {
+public class CookieManger  implements   CookieJar {
 
 
     private static Context mContext;
